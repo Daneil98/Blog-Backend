@@ -1,0 +1,69 @@
+{% load blog_tags %}
+{% load static %} 
+
+<!DOCTYPE html>
+   
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link href="{% static "css/blog.css" %}" rel="stylesheet">
+    </head>
+    
+    <body>
+        
+        
+       
+
+        <div class="w3-sidebar w3-bar-block" style="display:none" id="mySidebar">
+            <button onclick="w3_close()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+            <a href="http://127.0.0.1:8000/blog/" class="w3-bar-item w3-button">Home</a>
+            <a href="http://127.0.0.1:8000/blog/2022/9/26/who-is-it/" class="w3-bar-item w3-button">Who is Django Reinhardt?>
+            <a href="http://127.0.0.1:8000/blog/2022/9/26/who-is-it2/" class="w3-bar-item w3-button">What is Ripple?</a>
+            <a href="http://127.0.0.1:8000/blog/2022/9/26/who-is-it3/" class="w3-bar-item w3-button">What is a Manga?</a>
+            <a href="http://127.0.0.1:8000/blog/2022/10/4/This_is_a_post_formatted_with_markdown1/" class="w3-bar-item w3-button">This is a post formatted with markdown</a>
+
+        </div>
+        <div style="margin-left:25%"></div>
+
+        <p>
+            <a href="{% url "blog:post_feed" %}">Subscribe to my RSS feed</a>
+        </p>
+         
+        
+        
+        
+        </div>
+        <div class="w3-teal">
+            <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+           
+        </div>
+        <div class="w3-container">
+            <!--In this example, the sidebar is hidden (style="display:none")
+                It is shown when you click on the menu icon in the top left corner
+                When it is opened, it hides all the page content (style.width="100%").
+            -->
+        </div>
+            
+        <script>
+            function w3_open() {
+              document.getElementById("mySidebar").style.width = "100%";
+              document.getElementById("mySidebar").style.display = "block";
+            }
+            
+            function w3_close() {
+              document.getElementById("mySidebar").style.display = "none";
+            }
+        </script>
+                 
+
+        <div id="content">
+            
+            {% block content %}
+            
+            {% endblock %}
+            
+        </div>
+        
+        
+        
+    </body>
+</html>
