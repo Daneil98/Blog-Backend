@@ -1,3 +1,1 @@
-# Blog-Backend
-This is a simple blog app that allows users read articles, comment on articles, share articles via email, 
-I made use of paginators, template inheritance, tagging system
+A blog web application that enables visitors to freely read articles, express their thoughts through comments, and share content. The webpages are augmented with tags and paginators to enhance the overall user experience.
